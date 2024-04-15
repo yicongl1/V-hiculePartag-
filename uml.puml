@@ -1,0 +1,128 @@
+@startuml
+class Client {
+    - nom: string
+    - prenom: string
+    - age: int
+    - photo: string
+    - pseudo: string
+    - telephone: int
+    - email: string
+    -  type : enum:{
+professionnel,particulier}
+    
+}
+
+class Locataire {
+    - permis: string
+    - validite: date
+    - est_une_entreprise()
+    - est_valide()
+}
+
+class Proprietaire {
+}
+
+class Entreprise {
+    - nom: string
+    - adresse : string
+    - ville : string
+    - code_postal : integer
+}
+
+class Conducteur {
+    - nom: string
+    - prenom: string
+    - age: int
+    - photo: string
+    - telephone: int
+    - email: string
+    - permis : string
+    - validite: date
+}
+
+class Vehicule {
+    - immatriculation: string
+    - categorie: string
+    - marque: string
+    - modele: string
+    - couleur: string
+    - carburant: string
+    - annee_mise_circulation : year
+    - kilometrage: int
+    - niveau_carburant: float
+    - description: text
+    - est_disponible()
+}
+
+class Option{
+    - intitule : string
+}
+
+class Pays {
+    - nom: string 
+}
+class Periode {
+    - debut: date
+    - fin: date
+}
+
+class Contrat_assurance {
+    - nom_assurance: string
+    - type: string
+}
+
+class Contrat_location {
+    - option_franchise: string
+    - seuil_kilometrage: int
+    - debut: date
+    - fin: date
+}
+
+class Etat_des_lieux {
+    - type : enum:{debut,fin}
+    - photo: string
+    - kilometrage: int
+    - carburant: float
+    - checklist: string
+}
+
+class Facture {
+    - date: date
+    - kilometrage: int
+    - carburant: float
+    - moyen_paiement: string
+    - montant: float
+    - calcul_montant()
+}
+
+class Commentaire {
+    - note: int
+    - signaler: bool
+    - description: string
+}
+
+class Annonce {
+    - activite: bool
+    - intitule: string
+    - nombre_signalement: int
+    - note: float
+    - changer_nombre_signalements()
+}
+
+Client "0..*" -- "0..1" Entreprise : est employé >
+Entreprise "1" -- "1..*" Conducteur : appartient <
+Client <|- Locataire
+Client <|-- Proprietaire
+Proprietaire "1" -- "1..*" Contrat_location : soussigne à >
+Proprietaire "1" - "1..*" Vehicule : est propriétaire >
+Vehicule "*" -- "*" Periode : est dispo >
+Vehicule "*" -- "*" Pays : peut circuler >
+Vehicule "1" -- "1" Contrat_assurance : est soumis à >
+Vehicule "1..*" -- "0..*" Option : possede >
+Contrat_location "1..*" -- "1" Annonce
+Locataire "1" -- "1..*" Contrat_location : soussigne à >
+Contrat_location "1" - "1" Facture : donne lieu à >
+Contrat_location "1" -- "2" Etat_des_lieux : effectue >
+Contrat_location "1" -- "0..1" Commentaire : donne lieu à >
+Annonce "1" -- "1" Vehicule : possede <
+@enduml
