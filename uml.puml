@@ -111,7 +111,7 @@ class Annonce {
 
 
 Client <|-- Entreprise
-Entreprise "1" -- "1..*" Conducteur : appartient <
+Entreprise *-- "1..*" Conducteur : appartient <
 Client <|-- Particulier
 Particulier <|- Locataire
 Particulier <|-- Proprietaire
@@ -126,5 +126,5 @@ Locataire "0..1" -- "1..*" Contrat_location : soussigne à >
 Contrat_location  *-- "1" Facture : donne lieu à >
 Contrat_location *-- "2" Etat_des_lieux : effectue >
 Contrat_location *-- "0..1" Commentaire : donne lieu à >
-Annonce "1" -- "1" Vehicule : possede <
+Annonce "1" --* Vehicule : possede <
 @enduml
