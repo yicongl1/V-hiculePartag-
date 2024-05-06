@@ -39,6 +39,7 @@ JOIN Locataire L ON cl.locataire = l.pseudo
 JOIN Entreprise e ON cl.entreprise = e.id_entreprise
 
 -- Reservation selon plusieurs clitères
+-- Ici, note supérieure à 4 et véhicule dispo le 6 mai
 SELECT A.id_annonce
 FROM Annonce A
 JOIN Vehicule V ON V.immatriculation = A.vehicule
@@ -48,6 +49,6 @@ AND A.note >= 4.0
 AND V.immatriculation NOT IN (
         SELECT vehicule
         FROM Contrat_location
-        WHERE debut <= '2024-05-06' AND fin >= '2024-05-06'
+        WHERE debut >= '2024-05-06' AND fin <= '2024-05-06'
     );
 
