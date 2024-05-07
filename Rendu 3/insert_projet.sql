@@ -136,7 +136,6 @@ VALUES
     ('Allemagne'),
     ('Royaume-Uni');
 
-
 INSERT INTO Contrat_assurance (id_assurance, nom_assurance, type, vehicule)
 VALUES 
     (1, 'Assurance Auto Plus', 'Tous Risques', 'AB-123-CD'),
