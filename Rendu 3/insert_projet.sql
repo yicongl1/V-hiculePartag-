@@ -6,6 +6,34 @@
 
 -- ANNONCE  CHECK (nombre_signalement >= 3  AND NOT activite)
 
+INSERT INTO Utilisateur (pseudo, mot_de_passe, type)
+VALUES 
+    ('Gagnos', 'Gagnos', 'proprietaire'),
+    ('Leplusfort', 'Leplusfort', 'proprietaire'),
+    ('Xavier33', 'Xavier33', 'proprietaire'),
+    ('RobertDevos', 'RobertDevos', 'proprietaire'),
+    ('Chargeur2000', 'Chargeur2000', 'proprietaire'),
+    ('Avellll', 'Avellll', 'proprietaire'),
+    ('robot1234', 'robot1234', 'proprietaire'),
+    ('millemille', 'millemille', 'proprietaire'),
+    ('octogone8', 'octogone8', 'proprietaire'),
+    ('davvveee', 'davvveee', 'proprietaire'),
+    ('berttt', 'berttt', 'locataire'),
+    ('gregou', 'gregou', 'locataire'),
+    ('davidismoi', 'davidismoi', 'locataire'),
+    ('marchariere', 'marchariere', 'locataire'),
+    ('clavierks', 'clavierks', 'locataire'),
+    ('ordi3000', 'ordi3000', 'locataire'),
+    ('Raphaz', 'Raphaz', 'locataire'),
+    ('mickey', 'mickey', 'locataire'),
+    ('touche45', 'touche45', 'locataire'),
+    ('fania', 'fania', 'locataire'),
+    ('Apple', 'Apple', 'entreprise'),
+    ('Amazon', 'Amazon', 'entreprise'),
+    ('Google', 'Google', 'entreprise'),
+    ('Meta Platforms', 'Meta Platforms', 'entreprise'),
+    ('Tesla', 'Tesla', 'entreprise');
+
 INSERT INTO Proprietaire (pseudo, photo, telephone, email, nom, prenom, age)
 VALUES 
     ('Gagnos', 'gagnos.jpg', '0612345678', 'gagnos@free.fr', 'Gagnos', 'Jean', 40),
@@ -34,27 +62,27 @@ VALUES
     ('fania', 'fania.jpg', '0610101010', 'fania@gmail.com', '4567890123', '2025-07-14', 'Fania', 'Alexandra', 29);
 
 
-INSERT INTO Entreprise (id_entreprise, photo, telephone, email, nom, adresse, ville, code_postal)
+INSERT INTO Entreprise (pseudo, photo, telephone, email, nom, adresse, ville, code_postal)
 VALUES 
-    (1, 'apple.jpg', '0112345678', 'contact@apple.com', 'Apple Inc.', '1 Infinite Loop', 'Cupertino', 95014),
-    (2, 'amazon.jpg', '0223456789', 'contact@amazon.com', 'Amazon.com, Inc.', '410 Terry Avenue North', 'Seattle', 98109),
-    (3, 'google.jpg', '0334567890', 'contact@google.com', 'Google LLC', '1600 Amphitheatre Parkway', 'Mountain View', 94043),
-    (4, 'facebook.jpg', '0445678901', 'contact@facebook.com', 'Meta Platforms, Inc.', '1 Hacker Way', 'Menlo Park', 94025),
-    (5, 'tesla.jpg', '0556789012', 'contact@tesla.com', 'Tesla, Inc.', '3500 Deer Creek Road', 'Palo Alto', 94304);
+    ('Apple', 'apple.jpg', '0112345678', 'contact@apple.com', 'Apple Inc.', '1 Infinite Loop', 'Cupertino', 95014),
+    ('Amazon', 'amazon.jpg', '0223456789', 'contact@amazon.com', 'Amazon.com, Inc.', '410 Terry Avenue North', 'Seattle', 98109),
+    ('Google', 'google.jpg', '0334567890', 'contact@google.com', 'Google LLC', '1600 Amphitheatre Parkway', 'Mountain View', 94043),
+    ('Meta Platforms', 'facebook.jpg', '0445678901', 'contact@facebook.com', 'Meta Platforms, Inc.', '1 Hacker Way', 'Menlo Park', 94025),
+    ('Tesla', 'tesla.jpg', '0556789012', 'contact@tesla.com', 'Tesla, Inc.', '3500 Deer Creek Road', 'Palo Alto', 94304);
 
 
 INSERT INTO Conducteur (id_conducteur, entreprise, nom, prenom, age, photo, pseudo, telephone, email, permis, validite)
 VALUES 
-    (1, 1, 'Martin', 'Alexandre', 34, 'conducteur1.jpg', 'AlexTheDriver', '0611223344', 'alex.martin@amazon.com', '1234567890', '2025-05-30'),
-    (2, 2, 'Dubois', 'Marie', 27, 'conducteur2.jpg', 'MarieOnTheRoad', '0622334455', 'marie.dubois@gmail.com', '0987654321', '2024-11-15'),
-    (3, 3, 'Durand', 'Luc', 40, 'conducteur3.jpg', 'LucDriveMaster', '0633445566', 'luc.durand@yahoo.com', '9876543210', '2025-08-22'),
-    (4, 4, 'Leroy', 'Sophie', 31, 'conducteur4.jpg', 'SophieRider', '0644556677', 'sophie.leroy@facebook.com', '0123456789', '2026-03-10'),
-    (5, 5, 'Moreau', 'Thomas', 29, 'conducteur5.jpg', 'ThomasExplorer', '0655667788', 'thomas.moreau@tesla.com', '5432109876', '2025-09-17'),
-    (6, 1, 'Lefevre', 'Alice', 36, 'conducteur6.jpg', 'AliTraveler', '0666777888', 'alice.lefevre@apple.com', '2345678901', '2025-07-22'),
-    (7, 2, 'Garcia', 'Pierre', 33, 'conducteur7.jpg', 'PierreVoyage', '0677888999', 'pierre.garcia@google.com', '3456789012', '2026-01-12'),
-    (8, 3, 'Fournier', 'Camille', 28, 'conducteur8.jpg', 'CamilleAdventures', '0688999000', 'camille.fournier@amazon.com', '4567890123', '2025-10-29'),
-    (9, 4, 'Rousseau', 'Nicolas', 35, 'conducteur9.jpg', 'NicoRoadTrip', '0699000111', 'nicolas.rousseau@tesla.com', '5678901234', '2025-04-18'),
-    (10, 5, 'Petit', 'Émilie', 30, 'conducteur10.jpg', 'EmilieExplorer', '0611223344', 'emilie.petit@facebook.com', '6789012345', '2024-12-05');
+    (1, 'Apple', 'Martin', 'Alexandre', 34, 'conducteur1.jpg', 'AlexTheDriver', '0611223344', 'alex.martin@amazon.com', '1234567890', '2025-05-30'),
+    (2, 'Amazon', 'Dubois', 'Marie', 27, 'conducteur2.jpg', 'MarieOnTheRoad', '0622334455', 'marie.dubois@gmail.com', '0987654321', '2024-11-15'),
+    (3, 'Google', 'Durand', 'Luc', 40, 'conducteur3.jpg', 'LucDriveMaster', '0633445566', 'luc.durand@yahoo.com', '9876543210', '2025-08-22'),
+    (4, 'Meta Platforms', 'Leroy', 'Sophie', 31, 'conducteur4.jpg', 'SophieRider', '0644556677', 'sophie.leroy@facebook.com', '0123456789', '2026-03-10'),
+    (5, 'Tesla', 'Moreau', 'Thomas', 29, 'conducteur5.jpg', 'ThomasExplorer', '0655667788', 'thomas.moreau@tesla.com', '5432109876', '2025-09-17'),
+    (6, 'Apple', 'Lefevre', 'Alice', 36, 'conducteur6.jpg', 'AliTraveler', '0666777888', 'alice.lefevre@apple.com', '2345678901', '2025-07-22'),
+    (7, 'Amazon', 'Garcia', 'Pierre', 33, 'conducteur7.jpg', 'PierreVoyage', '0677888999', 'pierre.garcia@google.com', '3456789012', '2026-01-12'),
+    (8, 'Google', 'Fournier', 'Camille', 28, 'conducteur8.jpg', 'CamilleAdventures', '0688999000', 'camille.fournier@amazon.com', '4567890123', '2025-10-29'),
+    (9, 'Meta Platforms', 'Rousseau', 'Nicolas', 35, 'conducteur9.jpg', 'NicoRoadTrip', '0699000111', 'nicolas.rousseau@tesla.com', '5678901234', '2025-04-18'),
+    (10, 'Tesla', 'Petit', 'Émilie', 30, 'conducteur10.jpg', 'EmilieExplorer', '0611223344', 'emilie.petit@facebook.com', '6789012345', '2024-12-05');
 
 
 INSERT INTO Contrat_location (id_contrat, option_franchise, seuil_kilometrage, debut, fin, proprietaire, locataire, entreprise)
@@ -136,6 +164,7 @@ VALUES
     ('Allemagne'),
     ('Royaume-Uni');
 
+
 INSERT INTO Contrat_assurance (id_assurance, nom_assurance, type, vehicule)
 VALUES 
     (1, 'Assurance Auto Plus', 'Tous Risques', 'AB-123-CD'),
@@ -203,9 +232,9 @@ VALUES
     ('QR-345-ST', 5);
 
 CREATE VIEW ContrainteEntrepriseConducteur AS
-SELECT id_entreprise 
+SELECT pseudo 
 FROM Entreprise
-WHERE id_entreprise NOT IN (SELECT entreprise FROM Conducteur);
+WHERE pseudo NOT IN (SELECT entreprise FROM Conducteur);
 
 CREATE VIEW ContrainteProprietaireContrat_location AS
 SELECT pseudo 
@@ -218,9 +247,9 @@ FROM Locataire
 WHERE pseudo NOT IN (SELECT locataire FROM Contrat_location);
 
 CREATE VIEW ContrainteEntrepriseContrat_location AS
-SELECT id_entreprise
+SELECT pseudo
 FROM Entreprise
-WHERE id_entreprise NOT IN (SELECT entreprise FROM Contrat_location);
+WHERE pseudo NOT IN (SELECT entreprise FROM Contrat_location);
 
 CREATE VIEW ContrainteContrat_locationEtat_des_lieux AS
 SELECT id_contrat
